@@ -11,14 +11,15 @@ class Stack:
 
     def push(self, value):
         self.size += 1
-        self.storage.add_to_tail(value)
+        self.storage.add_to_head(value)
 
     def pop(self):
         if self.size == 0:
             return None
         else:
             self.size -= 1
-            self.storage.remove_from_tail()    
+            value = self.storage.remove_from_head()    
+            return value
 
     def len(self):
         return self.size
